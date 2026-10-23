@@ -6,11 +6,11 @@ public class Person {
     private Integer age;
     private double salary;
 
-    public Person(String firstName, String lastName, int age,double salary) {
+    public Person(String firstName, String lastName, int age, double salary) {
         this.firstName = firstName;
         this.lastName = lastName;
         this.age = age;
-        this.salary=salary;
+        this.salary = salary;
     }
 
     public String getFirstName() {
@@ -41,7 +41,7 @@ public class Person {
         return salary;
     }
 
-   private void setSalary(double salary) {
+    private void setSalary(double salary) {
         this.salary = salary;
     }
 

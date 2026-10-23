@@ -9,7 +9,7 @@ public class Main {
     public static void main(String[] args) throws IOException {
         BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
         int n = Integer.parseInt(reader.readLine());
-        
+
         Team team = new Team("Minioro");
         for (int i = 0; i < n; i++) {
             String[] input = reader.readLine().split("\\s+");

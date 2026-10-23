@@ -5,9 +5,9 @@ import java.util.List;
 import java.util.stream.Collectors;
 
 public class Person {
+    private final List<Product> products;
     private String name;
     private double money;
-    private final List<Product> products;
 
     public Person(String name, double money) {
         this.setName(name);

@@ -8,9 +8,9 @@ import java.util.Map;
 public abstract class Hardware {
     private final String name;
     private final String type;
+    private final Map<String, Software> softwareComponents;
     private int maxCapacity;
     private int maxMemory;
-    private final Map<String, Software> softwareComponents;
     private int usedCapacity;
     private int usedMemory;
 

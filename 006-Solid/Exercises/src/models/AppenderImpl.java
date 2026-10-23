@@ -9,8 +9,8 @@ public abstract class AppenderImpl implements Appender {
     public static final ReportLevel REPORT_LEVEL_DEFAULT = ReportLevel.INFO;
 
     private final Layout layout;
-    private ReportLevel reportLevel;
     private final int messagesCOunt;
+    private ReportLevel reportLevel;
 
 
     public AppenderImpl(Layout layout) {

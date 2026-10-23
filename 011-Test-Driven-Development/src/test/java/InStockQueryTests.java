@@ -8,18 +8,18 @@ import java.util.List;
 public class InStockQueryTests {
     private Instock stock;
 
+    private static List<String> labels(Iterable<Product> products) {
+        List<String> result = new ArrayList<>();
+        products.forEach(p -> result.add(p.getLabel()));
+        return result;
+    }
+
     @Before
     public void setUp() {
         this.stock = new Instock();
         this.stock.add(new Product("a", 10, 1));
         this.stock.add(new Product("b", 30, 2));
         this.stock.add(new Product("c", 20, 1));
-    }
-
-    private static List<String> labels(Iterable<Product> products) {
-        List<String> result = new ArrayList<>();
-        products.forEach(p -> result.add(p.getLabel()));
-        return result;
     }
 
     @Test

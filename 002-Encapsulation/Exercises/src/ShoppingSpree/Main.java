@@ -7,9 +7,9 @@ import java.util.LinkedHashMap;
 import java.util.Map;
 
 public class Main {
-    static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
     private static final Map<String, Person> people = new LinkedHashMap<>();
     private static final Map<String, Product> products = new LinkedHashMap<>();
+    static BufferedReader reader = new BufferedReader(new InputStreamReader(System.in));
 
     public static void main(String[] args) {
         try {

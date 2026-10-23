@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Team {
-    private String name;
     private final List<Player> players;
+    private String name;
 
     public Team(String name) {
         this.setName(name);

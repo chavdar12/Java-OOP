@@ -5,11 +5,11 @@ import java.util.Map;
 
 public class Bag {
     private final long capacity;
+    private final Map<String, Long> gems;
+    private final Map<String, Long> cash;
     private long currentWeight;
     private long gold;
-    private final Map<String, Long> gems;
     private long totalGems;
-    private final Map<String, Long> cash;
     private long totalCahs;
     private boolean goldIsAdded;
 

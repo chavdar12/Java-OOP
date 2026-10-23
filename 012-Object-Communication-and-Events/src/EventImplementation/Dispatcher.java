@@ -4,8 +4,8 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Dispatcher {
-    private String name;
     private final List<NameChangeListener> observers;
+    private String name;
 
     public Dispatcher() {
         this.name = "";

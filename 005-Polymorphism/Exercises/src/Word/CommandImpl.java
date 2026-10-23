@@ -9,6 +9,7 @@ import java.util.Map;
 public class CommandImpl implements CommandInterface {
     private final Map<String, TextTransform> commandTransforms;
     private final StringBuilder text;
+
     public CommandImpl(StringBuilder text) {
         this.commandTransforms = new HashMap<>();
         this.text = text;

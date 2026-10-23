@@ -1,8 +1,8 @@
 package models.engine;
 
 public abstract class Engine {
-    private String model;
     private final double output;
+    private String model;
     private int horsepower;
     private int displacement;
 

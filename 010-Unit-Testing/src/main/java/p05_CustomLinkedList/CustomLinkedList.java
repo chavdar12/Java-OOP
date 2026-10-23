@@ -7,6 +7,7 @@ public class CustomLinkedList<T> {
     private ListNode head;
     private ListNode tail;
     private int count;
+
     public CustomLinkedList() {
         this.head = null;
         this.tail = null;
