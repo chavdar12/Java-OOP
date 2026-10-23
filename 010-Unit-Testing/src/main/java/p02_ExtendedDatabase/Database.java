@@ -18,7 +18,7 @@ public class Database {
     }
 
     public void add(Person person) throws OperationNotSupportedException {
-        if (person == null) {
+        if (person == null || this.index == this.elements.length - 1) {
             throw new OperationNotSupportedException();
         }
 
@@ -27,12 +27,12 @@ public class Database {
     }
 
     public void remove() throws OperationNotSupportedException {
-        try {
-            this.elements[index--] = null;
-            this.elementsCount--;
-        } catch (ArrayIndexOutOfBoundsException ex) {
+        if (this.index < 0) {
             throw new OperationNotSupportedException();
         }
+
+        this.elements[index--] = null;
+        this.elementsCount--;
     }
 
     public Person[] getElements() {

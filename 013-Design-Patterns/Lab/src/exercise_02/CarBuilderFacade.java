@@ -15,7 +15,7 @@ public class CarBuilderFacade {
         return new CarInfoBuilder(this.car);
     }
 
-    public CarAddressBuilder build() {
-        return new CarAddressBuilder(car);
+    public CarAddressBuilder address() {
+        return new CarAddressBuilder(this.car);
     }
 }

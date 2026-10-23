@@ -6,7 +6,6 @@ import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.nio.file.StandardOpenOption;
-import java.util.stream.Stream;
 
 public class LogFile implements File {
     private static final String DEFAULT_PATH_AND_NAME = "output.txt";
@@ -34,6 +33,7 @@ public class LogFile implements File {
         try {
             Files.write(Paths.get(this.filePathAndName),
                     this.text.toString().getBytes(),
+                    StandardOpenOption.CREATE,
                     StandardOpenOption.APPEND);
             return true;
         } catch (IOException ex) {
@@ -49,10 +49,8 @@ public class LogFile implements File {
     }
 
     private int calculateSize() {
-        return Stream.of(this.text.toString().toCharArray())
-                .map(String::valueOf)
-                .filter(s -> Character.isAlphabetic(s.charAt(0)))
-                .mapToInt(e -> e.charAt(0))
+        return this.text.chars()
+                .filter(Character::isAlphabetic)
                 .sum();
     }
 

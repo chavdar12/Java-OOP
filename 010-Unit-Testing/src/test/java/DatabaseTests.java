@@ -55,4 +55,25 @@ public class DatabaseTests {
 
         Assert.assertEquals(length, INITIAL_ELEMENTS.length - 1);
     }
+
+    @Test(expected = OperationNotSupportedException.class)
+    public void addToFullDatabaseShouldThrowException() throws OperationNotSupportedException {
+        Database db = new Database(new Integer[]{1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16});
+        db.add(17);
+    }
+
+    @Test
+    public void removeFromEmptyDatabaseShouldThrowAndKeepDatabaseUsable() throws OperationNotSupportedException {
+        Database db = new Database(1);
+        db.remove();
+        try {
+            db.remove();
+            Assert.fail();
+        } catch (OperationNotSupportedException expected) {
+            // the failed remove must not corrupt the internal index
+        }
+
+        db.add(5);
+        Assert.assertArrayEquals(new Integer[]{5}, db.getElements());
+    }
 }

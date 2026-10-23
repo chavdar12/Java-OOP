@@ -16,7 +16,7 @@ public class Database {
     }
 
     public void add(Integer element) throws OperationNotSupportedException {
-        if (element == null) {
+        if (element == null || this.index == this.elements.length - 1) {
             throw new OperationNotSupportedException();
         }
 
@@ -25,12 +25,12 @@ public class Database {
     }
 
     public void remove() throws OperationNotSupportedException {
-        try {
-            this.elements[index--] = null;
-            this.elementsCount--;
-        } catch (ArrayIndexOutOfBoundsException ex) {
+        if (this.index < 0) {
             throw new OperationNotSupportedException();
         }
+
+        this.elements[index--] = null;
+        this.elementsCount--;
     }
 
     public Integer[] getElements() {

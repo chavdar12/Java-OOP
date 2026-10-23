@@ -1,25 +1,18 @@
 package exercise_02;
 
-public class CarAddressBuilder {
+public class CarAddressBuilder extends CarBuilderFacade {
 
-    private String city;
-    private String withAddress;
-
-    public CarAddressBuilder() {
-
+    public CarAddressBuilder(Car car) {
+        super.car = car;
     }
 
     public CarAddressBuilder withCity(String city) {
-        this.city = city;
+        this.car.setCity(city);
         return this;
     }
 
     public CarAddressBuilder withAddress(String address) {
-        this.withAddress = city;
+        this.car.setAddress(address);
         return this;
-    }
-
-    public String build() {
-
     }
 }

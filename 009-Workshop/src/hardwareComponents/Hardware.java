@@ -38,8 +38,8 @@ public abstract class Hardware {
 
     public void addSoftware(Software software) {
         if (this.hasFreeCapacity(software.getCapacityConsumption())
-                && this.hasFreeMemory(software.getMemoryConsumption())) {
-            this.softwareComponents.putIfAbsent(software.getName(), software);
+                && this.hasFreeMemory(software.getMemoryConsumption())
+                && this.softwareComponents.putIfAbsent(software.getName(), software) == null) {
             this.usedCapacity += software.getCapacityConsumption();
             this.usedMemory += software.getMemoryConsumption();
         }

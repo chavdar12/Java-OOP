@@ -69,21 +69,31 @@ public class Instock implements ProductStock {
 
     @Override
     public Iterable<Product> findAllByPrice(double price) {
-        throw new UnsupportedOperationException();
+        return this.products.stream()
+                .filter(p -> p.getPrice() == price)
+                .collect(Collectors.toList());
     }
 
     @Override
     public Iterable<Product> findFirstMostExpensiveProducts(int count) {
-        throw new UnsupportedOperationException();
+        if (count <= 0 || count > this.getCount()) {
+            throw new IllegalArgumentException();
+        }
+        return this.products.stream()
+                .sorted((f, s) -> Double.compare(s.getPrice(), f.getPrice()))
+                .limit(count)
+                .collect(Collectors.toList());
     }
 
     @Override
     public Iterable<Product> findAllByQuantity(int quantity) {
-        throw new UnsupportedOperationException();
+        return this.products.stream()
+                .filter(p -> p.getQuantity() == quantity)
+                .collect(Collectors.toList());
     }
 
     @Override
     public Iterator<Product> iterator() {
-        throw new UnsupportedOperationException();
+        return this.products.iterator();
     }
 }
