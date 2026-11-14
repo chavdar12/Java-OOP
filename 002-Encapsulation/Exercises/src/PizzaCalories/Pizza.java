@@ -14,6 +14,10 @@ public class Pizza {
         this.setToppings(toppingsCount);
     }
 
+    public String getName() {
+        return name;
+    }
+
     public int getToppingsCount() {
         return toppingsCount;
     }
@@ -29,6 +33,7 @@ public class Pizza {
         if (toppingsCount < 0 || toppingsCount > 10) {
             throw new IllegalArgumentException("Number of toppings should be in range [0..10].");
         }
+        this.toppingsCount = toppingsCount;
         this.toppings = new ArrayList<>(toppingsCount);
     }
 

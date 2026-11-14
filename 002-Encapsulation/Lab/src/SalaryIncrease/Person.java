@@ -47,7 +47,7 @@ public class Person {
 
     @Override
     public String toString() {
-        return String.format("%s %s gets %f leva.", this.firstName, this.lastName, this.salary);
+        return String.format("%s %s gets %s leva", this.firstName, this.lastName, this.salary);
     }
 
     public void increaseSalary(double bonus) {

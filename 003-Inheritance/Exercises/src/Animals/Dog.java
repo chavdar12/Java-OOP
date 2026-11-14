@@ -8,6 +8,6 @@ public class Dog extends Animal {
 
     @Override
     public String produceSound() {
-        return "BauBau";
+        return "Woof!";
     }
 }

@@ -8,6 +8,6 @@ public class Kitten extends Cat {
 
     @Override
     public String produceSound() {
-        return "Miau";
+        return "Meow";
     }
 }

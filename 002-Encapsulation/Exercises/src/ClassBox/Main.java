@@ -19,7 +19,7 @@ public class Main {
 
 
         System.out.printf("Surface Area - %.2f\n", surfaceArea);
-        System.out.printf("Lateral Area - %.2f\n", lateralArea);
+        System.out.printf("Lateral Surface Area - %.2f\n", lateralArea);
         System.out.printf("Volume - %.2f", volume);
     }
 }
