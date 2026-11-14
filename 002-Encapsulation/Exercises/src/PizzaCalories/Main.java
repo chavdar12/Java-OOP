@@ -17,7 +17,7 @@ public class Main {
             getDoughData();
             addToppings();
 
-            System.out.println(pizza.getOverallCalories());
+            System.out.printf("%s - %.2f%n", pizza.getName(), pizza.getOverallCalories());
 
         } catch (IllegalArgumentException iae) {
             System.out.println(iae.getMessage());

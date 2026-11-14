@@ -9,19 +9,22 @@ subprojects {
     if (!file("src/main/java").isDirectory) {
         configure<SourceSetContainer> {
             named("main") { java.setSrcDirs(listOf("src")) }
-            named("test") { java.setSrcDirs(listOf("test")) }
+            named("test") { java.setSrcDirs(listOf("test", rootProject.file("test-support"))) }
         }
     }
 
     tasks.withType<JavaCompile>().configureEach {
-        options.release = 17
+        options.release = 25
         options.encoding = "UTF-8"
     }
 
     dependencies {
         "testImplementation"("junit:junit:4.13.2")
-        "testImplementation"("org.mockito:mockito-core:5.20.0")
+        "testImplementation"("org.mockito:mockito-core:5.24.0")
     }
 
-    tasks.withType<Test>().configureEach { useJUnit() }
+    tasks.withType<Test>().configureEach {
+        useJUnit()
+        failOnNoDiscoveredTests = false // most modules only get the shared test-support sources
+    }
 }

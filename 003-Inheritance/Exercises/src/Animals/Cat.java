@@ -7,6 +7,6 @@ public class Cat extends Animal {
 
     @Override
     public String produceSound() {
-        return "MiauMiau";
+        return "Meow meow";
     }
 }

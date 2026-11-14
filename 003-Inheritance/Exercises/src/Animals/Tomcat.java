@@ -8,6 +8,6 @@ public class Tomcat extends Cat {
 
     @Override
     public String produceSound() {
-        return "Give me one million b***h";
+        return "MEOW";
     }
 }

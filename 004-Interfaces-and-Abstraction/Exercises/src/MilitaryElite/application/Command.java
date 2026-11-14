@@ -34,8 +34,8 @@ public class Command {
                         lastName,
                         Double.parseDouble(tokens.get(3)));
                 break;
-            case "LeutenantGeneral":
-                soldier = new LeutenantGeneralImpl(id, firstName, lastName,
+            case "LieutenantGeneral":
+                soldier = new LieutenantGeneralImpl(id, firstName, lastName,
                         Double.parseDouble(tokens.get(3)));
                 int[] ids = tokens.stream().skip(4).mapToInt(Integer::parseInt)
                         .toArray();
@@ -43,7 +43,7 @@ public class Command {
                     for (int i = 0; i < this.getARMY().getSoldiers().size(); i++) {
                         if (this.getARMY().getSoldiers().get(i) instanceof Private) {
                             if (this.getARMY().getSoldiers().get(i).getId() == currentId) {
-                                ((LeutenantGeneralImpl) soldier).addPrivate((Private) this.getARMY().getSoldiers().get(i));
+                                ((LieutenantGeneralImpl) soldier).addPrivate((Private) this.getARMY().getSoldiers().get(i));
                             }
                         }
                     }

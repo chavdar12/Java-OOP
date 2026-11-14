@@ -9,7 +9,7 @@ public class Person {
         this.setAge(age);
     }
 
-    private String getName() {
+    public String getName() {
         return name;
     }
 
@@ -20,7 +20,7 @@ public class Person {
         this.name = name;
     }
 
-    private int getAge() {
+    public int getAge() {
         return age;
     }
 

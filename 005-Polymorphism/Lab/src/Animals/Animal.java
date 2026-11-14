@@ -10,6 +10,6 @@ public class Animal {
     }
 
     public String explainSelf() {
-        return String.format("I am %s and my favorite food is %s", this.name, this.favouriteFood);
+        return String.format("I am %s and my favourite food is %s", this.name, this.favouriteFood);
     }
 }
