@@ -31,3 +31,6 @@ bin/
 ._*
 .Spotlight-V100
 .Trashes
+
+# Each lesson ships its own Gradle wrapper
+!gradle-wrapper.jar
